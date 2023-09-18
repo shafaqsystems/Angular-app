@@ -1,0 +1,28 @@
+    
+    <div class="" *ngIf="!loading">
+        <h2 class="heading">Products</h2>
+        <div class="flex">
+            <div class="card" style="width: 18rem;" *ngFor="let product of products">
+                <img class="card-img-top" [src]="product.images[0]" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{product?.title}}</h5>
+                    <p class="card-text">Rs. {{product?.price}}</p>
+                    <button type="button" class="btn btn-primary m-1" (click)="productDetail(product)">View Details</button>
+                    <button type="button" class="btn btn-primary m-1" (click)="editProduct(product)">Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-controls" style="text-align: center;">
+            <button (click)="pageChanged(currentPage - 1)" [disabled]="currentPage === 1" class="btn btn-primary">
+                Previous
+            </button>
+            <span class="current-page">{{ currentPage }}</span>
+            <button (click)="pageChanged(currentPage + 1)" [disabled]="currentPage === 20" class="btn btn-primary">
+                Next
+            </button>
+        </div>
+    </div>
+  
+    <div class="loader" *ngIf="loading">
+        <div class="custom-loader"></div>
+      </div>

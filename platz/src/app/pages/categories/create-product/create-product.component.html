@@ -1,0 +1,12 @@
+<div class="m-5">
+    <form [formGroup]="ProductForm">
+        <input class="form-control m-1" placeholder="Enter Product Title" formControlName="title"/>
+        <input class="form-control m-1" placeholder="Enter Product Price" formControlName="price"/>
+        <input class="form-control m-1" placeholder="Enter Product Description" formControlName="description"/>
+        <input class="form-control m-1" placeholder="Enter Image URL" formControlName="images"/>
+        <div class="submit">
+            <button class="btn btn-primary m-2" type="button" (click)="onSubmit()">Submit</button>
+    
+        </div>
+    </form>
+    </div>

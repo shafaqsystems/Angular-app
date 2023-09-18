@@ -1,0 +1,16 @@
+<div class="container" *ngIf="!loading">
+    <div class="container d-flex justify-content-between mt-2">
+        <h2 class="heading">Category Detail</h2>
+        <button class="btn btn-light" (click)="createProduct()">Create Product</button>
+    </div>
+    <div class="card mb-3">
+        <img class="card-img-top" [src]="category.image" alt="Card image cap" onerror="this.src='assets/images/dummyImage.png';">
+        <div class="card-body">
+          <h5 class="card-title">{{category.name}}</h5>
+        </div>
+      </div>
+</div>
+
+<div class="loader" *ngIf="loading">
+    <div class="custom-loader"></div>
+  </div>

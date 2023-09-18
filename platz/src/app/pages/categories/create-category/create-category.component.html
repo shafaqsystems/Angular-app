@@ -1,0 +1,10 @@
+<div class="m-5">
+<form [formGroup]="categoryForm">
+    <input class="form-control m-1" placeholder="Enter Category Name" formControlName="name"/>
+    <input class="form-control m-1" placeholder="Enter Image URL" formControlName="image"/>
+    <div class="submit">
+        <button class="btn btn-primary m-2" type="button" (click)="onSubmit()">Submit</button>
+
+    </div>
+</form>
+</div>

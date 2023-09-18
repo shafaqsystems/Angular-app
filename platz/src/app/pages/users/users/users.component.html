@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="container d-flex justify-content-between m-2">
+    <h2 class="heading">Users</h2>
+    <button class="btn btn-light" (click)="createUser()">Create User</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Date Created</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th><img [src]="user.avatar" alt="" height="50" width="50" style="border-radius: 10px;"
+            onerror="this.src='assets/images/dummyImage.png';"></th>
+        <th>{{user?.name}}</th>
+        <td>{{user?.email}}</td>
+        <td>{{user?.role}}</td>
+        <td>{{user?.creationAt | date: 'dd/MM/yyyy'}}</td>
+        <button class="btn btn-primary mt-2" (click)="createUser(user)">Edit</button>
+      </tr>
+    </tbody>
+  </table>
+</div>

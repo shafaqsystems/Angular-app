@@ -1,0 +1,14 @@
+<div class="m-5">
+    <form [formGroup]="userForm">
+        <input class="form-control m-1" placeholder="Enter Product Name" formControlName="name"/>
+        <input class="form-control m-1" placeholder="Enter Product Email" formControlName="email"/>
+        <input class="form-control m-1" placeholder="Enter Product Password" formControlName="password"/>
+        <input class="form-control m-1" placeholder="Enter Image URL" formControlName="avatar"/>
+        <h6 *ngIf="userForm.value.email && checkAvailabilityUser && !isAvailable">User is available </h6>
+        <h6 *ngIf="userForm.value.email && checkAvailabilityUser && isAvailable">User is not available </h6>
+        <div class="submit">
+            <button class="btn btn-primary m-2" type="button" (click)="onSubmit()">Submit</button>
+            <button class="btn btn-primary m-2" type="button" *ngIf="userForm.value.email" (click)="checkAvailability()">Check Availability</button>
+        </div>
+    </form>
+    </div>

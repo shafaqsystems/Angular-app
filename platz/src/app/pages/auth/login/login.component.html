@@ -1,0 +1,12 @@
+<div class="login-container">
+    <div class="logo">
+        <img src="https://static.vecteezy.com/system/resources/previews/016/016/817/non_2x/ecommerce-logo-free-png.png"
+            alt="PLATZ FAKE STORE Logo">
+    </div>
+    <h1>Welcome to Platz FAKE STORE</h1>
+    <form [formGroup]="loginForm" class="login-form">
+        <input type="text" name="email" placeholder="Email" formControlName="email">
+        <input type="password" name="password" placeholder="Password" formControlName="password">
+        <button type="submit" (click)="onSubmit()">Login</button>
+    </form>
+</div>
